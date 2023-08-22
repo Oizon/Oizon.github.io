@@ -119,17 +119,34 @@ ____
 
 #### Rules for Naming
 
-Validation rule names should be unique, beginning with an uppercase letter. Whole words should be used and use of acronyms and abbreviations should be limited. e.g. 
+1. The Validation Rule Name MUST try to explain in a concise manner what the validation rule prevents. Note that conciseness trumps clarity for this field.
+2. All Validation Rules ```API``` names MUST be written in PascalCase.
+3. Validation Rules SHOULD NOT contain an underscore in the fields name, except where explicitely defined otherwise in these conventions.
+4. A Validation Rule SHALL always start by ```VR```, followed by a shorthand name of the object, followed by a number corresponding to the number of validation rules on the triggering Object, followed by an underscore.
+5. The Validation Rule Error Message MUST contain an error code indicating the number of the Validation Rule, in the format [VRXX], XX being the Validation Rule Number.
+6. Validation Rules MUST have a description, where the description details the Business Use Case that is adressed by the VR. A Description SHALL NOT contain technical desccriptions of what triggers the VR - the Validation Rule itself SHOULD be written in such a manner as to be clearly readable.
 
-&lt;FIELD&gt;  &lt;RULE&gt;  &lt;OPTIONAL DEPENDENCY&gt;  
+&lt;Rule Number&gt;  &lt;Object&gt;  &lt;Description&gt;  
 
-```Postal Code Required (Suburb)``` 
-
-The above example shows that Postal Code is required dependent on values in the Suburb field. The exact rule definition is in the detail but keeping this format helps keeps the naming as intuitive as possible without being too restrictive.
+1. All Validation Rules MUST contain a Bypass Rule check.
+   <ul>
+    <li>The simplest bypass is a custom field of type <code>Checkbox</code>, set on the <code>User</code> Sobject, which you can Name <code>Bypass Validation Rules</code>. To avoid having to check how the consultant set the bypass, we recommend the API name always be <code>IsBypassVR__c</code></li>
+    <li>If more granularity is needed, a consultant MAY want to create a Hierarchical Custom Setting to implement the bypass.</li>
+    <li>This bypass can be added to the more common User-based bypass, but SHOULD NOT supplant it.</li>
+   </ul>
+3. Wherever possible, use operators over functions.
+4. All possible instances of ```IF()``` SHOULD be replaced by ```CASE()```
+5. Referencing other formula fields should be avoided at all cost.
+6. In all instances, ```ISBLANK()``` should be used instead of ```ISNULL```, as per <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=customize_functions.htm&amp;language=en#ISBLANKDef">this link</a>
+7. Validation Rules MUST NOT be triggered in a casquading manner.
 
 #### Exceptions
 
-Widely used and commonly understood acronyms and abbreviations can be used instead of the long form. For example HTTP or URL or ACMA. As there is an upper limit for the number of characters in the name field the use of abbreviations will be permitted if by including them the name becomes easier to read.
+Widely used and commonly understood acronyms and abbreviations can be used instead of the long form. For example HTTP or URL or API. As there is an upper limit for the number of characters in the name field the use of abbreviations will be permitted if by including them the name becomes easier to read.
+
+While including an error code in a user displayed message may be seen as strange, this will allow any admin or consultant to find exactly which validation rule is causing problems when user need only communicate the end code for debugging purposes.
+
+Casquading Validation Rules are defined as VRs that trigger when another VR is triggered. Example: A field is mandatory if the status is Lost, but the field cannot contain less than 5 characters. Doing two validation rules which would trigger one another would result in a user first seeing that the fild is mandatory, then saving again, and being presented with the second error. In this case, the second error should be displayed as soon as the first criteria is met..
 
 #### Demonstrative Example
 
@@ -141,12 +158,10 @@ The following are examples of validation rule naming that should **not** be used
 
 The following are examples of the naming convention that will be used:
 
-| Validation Rule Name | Reason |
-|----------------------|:-------|
-```Street Address < 60 chars``` | Field and rule clearly identified
-```Zipcode not blank``` | ibid
-```Occupation required``` | ibid
-``` Zipcode required (Suburb)``` | FIELD, RULE, and DEPENDENCY clearly identified
+| Validation Rule Name | Formula | Error Message | Description |
+|----------------------|:-------|:-------|:-------|
+```VR01_OPP_CancelReason``` | !$User.IsCanBypassVR__c && TEXT(Cancellationreason__c)="Other" && ISNULL(OtherCancellationReason__c) | If you select 'Other' as a cancellation reason, you must fill out the details of that reason. [VR01] | Prevents selecting 'Other' less reason without putting a comment in. [VR01]
+```VR02_OPP_NoApprovalCantReserve``` | !$User.IsCanBypassVR__c && !IsApproved__c && ( OR( ISPICKVAL(Status__c,"Approved - CC "), ISPICKVAL(Status__c,"Approved - Client"), ISPICKVAL(Status__c,"Paid") )) | The status cannot advance further if it is not approved. [VR02] | The status cannot advance further if it is not approved. [VR02]
 
 - [Return to Top](#table-of-contents)
 ____

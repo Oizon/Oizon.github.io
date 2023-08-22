@@ -67,14 +67,16 @@ In all cases where the entire purpose of the field is not evident by reading the
 If the purpose of the field is ambiguous, the field MUST contain a help text. In cases where the purpose is clear, the help text COULD also be defined for clarity's sake.
 
 Field API names should respect the following prefixes and suffixes.
-| Field Type                | Prefix        | Suffix   |
-|MasterDetail               |---------------|Ref       |
-|Lookup                     |---------------|Ref       |
-|Formula                    |---------------|Auto      |
-|Rollup Summary             |---------------|Auto      |
-|Filled by automation       |---------------|Trig      |
-|Picklist or MultiPicklist  |---------------|Pick      |
-|Boolean                    |Is or IsCan    |----------|
+
+| Field Type | Prefix | Suffix |
+|-----------|:---------|:-------|
+```MasterDetail```| |Ref
+```Lookup``` | | Ref
+```Formula```| | Auto
+```Rollup Summary```| | Auto
+```Filled by automation```| | Trig
+```Picklist or MultiPicklist```| | Pick
+```Boolean``` |```Is``` or ```IsCan```| |
 
 ##### Exceptions
 

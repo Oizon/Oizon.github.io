@@ -9,9 +9,9 @@ navbar_entries:
     url: https://www.abhinav.co
 
 project_entries:
-  - title: Project 1
-    url: overview-post
-    desc: This is an example project, configured in _data/home.yml
+  - title: Salesforce Naming Conventions
+    url: naming-conventions
+    desc: Outline of chosen information from around the net for naming conventions within Salesforce!
 
   - title: Project 2
     url: overview-post

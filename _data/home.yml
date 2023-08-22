@@ -5,8 +5,8 @@ navbar_entries:
   - title: blog
     url: blog
 
-  - title: website
-    url: https://www.abhinav.co
+  - title: Buy me a coffee
+    url: https://www.buymeacoffee.com/Oizon
 
 project_entries:
   - title: Salesforce Naming Conventions

@@ -5,9 +5,6 @@ navbar_entries:
   - title: blog
     url: blog
 
-  - title: buy me a coffee
-    url: https://www.buymeacoffee.com/Oizon
-
 project_entries:
   - title: Salesforce Naming Conventions
     url: salesforce-naming-conventions
@@ -55,8 +52,8 @@ old_project_entries:
     desc: The better people know you, the better they collaborate
 
 footer_entries:
-  - title: abhinav's homepage
-    url: https://www.abhinav.co
+  - title: buy me a coffee
+    url: https://www.buymeacoffee.com/Oizon
 
   - title: LinkedIn
     url: https://www.linkedin.com/in/williamgalinat/

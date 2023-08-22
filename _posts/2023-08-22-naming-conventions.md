@@ -3,11 +3,8 @@ layout: post
 author: William Galinat
 tags: [Salesforce, Naming Conventions]
 ---
-##Salesforce Naming Conventions
-
-Naming conventions make the application easier to read and maintain. The naming standards documented here cover customization and configuration areas of salesforce. Regardless of the context in which names are used, Names should be descriptive, concrete, and specific rather than general. Having a generalized name such as ProductLine can have different semantics depending upon the context. It’s better to use something the business identifies with and that will not create a potential conflict with other applications; e.g., ReverseMortgage.
-
 # Table of Contents
+- [0. Overview] (#salesforce-naming-conventions)
 - [1. Custom Objects](#1-custom-objects)
 - [2. Custom Fields](#2-custom-fields)
 - [3. Validation Rules](#3-validation-rules)
@@ -27,6 +24,10 @@ Naming conventions make the application easier to read and maintain. The naming 
 - [17. Apex Type Names](#17-apex-type-names)
 - [18. Public Groups](#18-public-groups)
 - [19. Queues](#19-queues)
+
+## Salesforce Naming Conventions
+
+Naming conventions make the application easier to read and maintain. The naming standards documented here cover customization and configuration areas of salesforce. Regardless of the context in which names are used, Names should be descriptive, concrete, and specific rather than general. Having a generalized name such as ProductLine can have different semantics depending upon the context. It’s better to use something the business identifies with and that will not create a potential conflict with other applications; e.g., ReverseMortgage.
 
 ### 1. Custom Objects 
 

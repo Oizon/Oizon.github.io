@@ -60,7 +60,7 @@ The following are examples of the naming convention that will be used:
 ```OrderItem``` | Removing all underscores will help keep a standard naming convention as many times there are words that some may separate into two words and other may not. For example: ```Zipcode``` vs. ```Zip Code```.
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 2. Custom Fields
 
@@ -113,7 +113,7 @@ The following are examples of the naming convention that will be used
 ```Contact``` | Checkbox | | Sponsored? | IsSponsored__c | 	Checked if the contact was sponsored into the program by another client.
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 3. Validation Rules
 
@@ -164,7 +164,7 @@ The following are examples of the naming convention that will be used:
 ```VR02_OPP_NoApprovalCantReserve``` | !$User.IsCanBypassVR__c && !IsApproved__c && ( OR( ISPICKVAL(Status__c,"Approved - CC "), ISPICKVAL(Status__c,"Approved - Client"), ISPICKVAL(Status__c,"Paid") )) | The status cannot advance further if it is not approved. [VR02] | The status cannot advance further if it is not approved. [VR02]
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 4. Workflow Rules
 
@@ -197,7 +197,7 @@ The following are examples of workflow rule naming that should not be used:
 |Description | Sends an email to the Deceased Customer public group and updates the inactive flag of the contact for batch processing | Provides a clear and brief description of the intention of the actions performed. The description can be more easily updated and migrated as changes are made over time|
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 5. Field Updates
 
@@ -231,6 +231,7 @@ The following are examples of the naming convention that will be used :
 | Description | Updates the inactive flag on the customer record which will be used by batch apex for processing | Briefly describes interdependencies that may rely on this action being performed |
 
 - [Return to Top](#table-of-contents)
+---
 
 ### 6. Email Alerts
 
@@ -261,7 +262,7 @@ The following are examples of the naming convention that will be used :
 Email Alert Description  |Email Deceased Customer Team – New Deceased Customer | Describes who is emailed and which template is used
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 7. Approval Processes
 
@@ -294,7 +295,7 @@ Approval Process Name | Reason
 | Conflict Completed | Brief description of the entry criteria indicate a clear intention of when the process will be used
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 8. Approval Process Steps
 
@@ -330,7 +331,7 @@ Approval – Sent to Manager | The approval step becomes self documenting showin
 Approval – Sent to Legal | The approval step becomes self documenting showing the administrator and user the result of the approval step
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 9. Visualforce Pages
 
@@ -359,7 +360,7 @@ CustomerView | Clearly defined and succinct name
 MailFaxRequest | Clearly defined and succinct name
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 10. Apex Classes
 
@@ -392,7 +393,7 @@ MailFaxController | Controller Extension for the Mail_Fax__c object
 CustomerController | Customer controller for the customer object
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 11. Apex Batch, Schedulable, and Queueable Classes
 
@@ -422,7 +423,7 @@ RoleExpiry_Batch | Multiple words concatenated with subsequent words capitalized
 RoleExpiry_Queueable | Multiple words concatenated with subsequent words capitalized. Suffixed with _Queueable denoting that this is a queueable apex class.
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 12. Apex Triggers
 
@@ -449,7 +450,7 @@ Trigger Name | Reason
 AccountUpdateTrigger | Generic trigger that performs only update operations. AccountInsertTrigger | Generic trigger that performs only insert operations AccountTrigger | Generic trigger that performs insert,update, and delete operations. This would be the only trigger for the account object.
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 13. Apex Test Classes
 
@@ -470,7 +471,7 @@ Class Name | Reason
 CustomerManagementTest | Test class for the CustomerManagement Apex class. Will be listed alphabetically under the class being tested.
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 14. Apex Methods
 
@@ -500,7 +501,7 @@ ammortizationCalculation() | Describes what calculation is performed repaginateD
 numberOfTransactionsInQ1() | Longer names are better if they are needed for clarity
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 15. Apex Variables
 
@@ -525,7 +526,7 @@ Variable Name | Reason
 currentBalance = lastBalance - lastPayment | Unambiguous names that have a clear meaning
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 16. Apex Constants
 
@@ -550,7 +551,7 @@ Class Name | Reason
 MAX_CHARACTERS | Uppercase letters help the reviewer determine that it is a constant
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 17. Apex Type Names
 
@@ -577,7 +578,7 @@ Type Name | Reason
 Map Contacts | Starts with an uppercase letter String Contact Starts with an uppercase letter
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 18. Public Groups
 
@@ -610,7 +611,7 @@ None
 ![Public Groups](/img/group_naming_example_1.png)
 
 - [Return to Top](#table-of-contents)
-____
+---
 
 ### 19. Queues
 
@@ -641,6 +642,7 @@ None
 ![Public Groups](/img/group_naming_example_1.png)
 
 - [Return to Top](#table-of-contents)
+---
 
 ### 20. Acknowledgments
 

@@ -3,6 +3,9 @@ layout: post
 author: William Galinat
 tags: [Salesforce, Naming Conventions]
 ---
+
+Welcome to my exploration of Salesforce Naming Conventions. This guide brings together insights from various sources, distilling the best practices that have emerged from the Salesforce community. By merging these perspectives, we aim to provide you with a comprehensive resource that combines collective expertise and tailored solutions. As we delve into this guide, remember that the strength of these naming conventions lies in their collaborative foundation—a testament to the shared wisdom of Salesforce practitioners. Let's dive in and discover how these insights can enhance your development endeavors.
+
 ## Table of Contents
 - [Overview](#salesforce-naming-conventions)
 - [1. Custom Objects](#1-custom-objects)
@@ -24,6 +27,7 @@ tags: [Salesforce, Naming Conventions]
 - [17. Apex Type Names](#17-apex-type-names)
 - [18. Public Groups](#18-public-groups)
 - [19. Queues](#19-queues)
+- [20. Acknowledgments](#20-acknowledgments)
 
 ## Salesforce Naming Conventions
 
@@ -622,3 +626,11 @@ None
 ![Public Groups](/img/group_naming_example_1.png)
 
 - [Return to Top](#table-of-contents)
+
+### 20. Acknowledgments
+
+Source | Description | Links
+-----------|:------|:------
+CFPB | This provided much of the orginal outline that was changed with more updated information. | https://github.com/cfpb/salesforce-docs/blob/master/_pages/Salesforce-Naming-Conventions.md
+The SFXD Wiki | Provided a refreshing take on Field and Validation Rule conventions. | https://sfxd.github.io/wiki-index.html
+

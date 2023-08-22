@@ -10,7 +10,7 @@ navbar_entries:
 
 project_entries:
   - title: Salesforce Naming Conventions
-    url: naming-conventions
+    url: salesforce-naming-conventions
     desc: Outline of chosen information from around the net for naming conventions within Salesforce!
     highlight: WIP
 

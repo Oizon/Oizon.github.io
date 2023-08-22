@@ -12,6 +12,7 @@ project_entries:
   - title: Salesforce Naming Conventions
     url: naming-conventions
     desc: Outline of chosen information from around the net for naming conventions within Salesforce!
+    highlight: WIP
 
   - title: Project 2
     url: overview-post

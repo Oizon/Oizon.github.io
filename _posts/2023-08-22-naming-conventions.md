@@ -3,7 +3,7 @@ layout: post
 author: William Galinat
 tags: [Salesforce, Naming Conventions]
 ---
-# Table of Contents
+## Table of Contents
 - [Overview](#salesforce-naming-conventions)
 - [1. Custom Objects](#1-custom-objects)
 - [2. Custom Fields](#2-custom-fields)

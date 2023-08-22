@@ -1,11 +1,11 @@
 navbar_entries:
-  - title: about
+  - title: about me
     url: about
 
   - title: blog
     url: blog
 
-  - title: Buy me a coffee
+  - title: buy me a coffee
     url: https://www.buymeacoffee.com/Oizon
 
 project_entries:

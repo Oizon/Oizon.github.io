@@ -61,12 +61,12 @@ ____
 ### 2. Custom Fields
 
 ##### Rules for Naming
-All field API names MUST be written in English, even when the label is in another language.
-All field API names MUST be written in PascalCase.
-Fields SHOULD NOT contain an underscore in the fields name, except where explicitely defined otherwise in these conventions.
-Fields generally MUST (but you probably won't) contain a description.
-In all cases where the entire purpose of the field is not evident by reading the name, the field MUST contain a description.
-If the purpose of the field is ambiguous, the field MUST contain a help text. In cases where the purpose is clear, the help text COULD also be defined for clarity's sake.
+1. All field API names MUST be written in English, even when the label is in another language.
+2. All field API names MUST be written in PascalCase.
+3. Fields SHOULD NOT contain an underscore in the fields name, except where explicitly defined otherwise in these conventions.
+4. Fields generally MUST (but you probably won't) contain a description.
+5. In all cases where the entire purpose of the field is not evident by reading the name, the field MUST contain a description.
+6. If the purpose of the field is ambiguous, the field MUST contain a help text. In cases where the purpose is clear, the help text COULD also be defined for clarity's sake.
 
 Field API names should respect the following prefixes and suffixes.
 
@@ -84,8 +84,12 @@ Field API names should respect the following prefixes and suffixes.
 
 Widely used and commonly understood acronyms and abbreviations can be used instead of the long form. For example HTTP or URL or ACMA.
 
-If the organization is home to multiple services, the field API name SHOULD be prepended with the name of the service that required the field, followed by an underscore. 
-This MUST NOT be the case if there is only one service using the object.
+1. If the organization is home to multiple services, the field API name SHOULD be prepended with the name of the service that required the field, followed by an underscore. 
+- [This MUST NOT be the case if only one service uses the object.]
+2. If several services use the field, or the field was origianlly requiored by a service before being used by others: the field API name MUST(but you probably won't) be prepended with the name of the service that uses the field the most, followed by an underscore. The Description of the field MUST indicate which service use the field.
+3. In the case the field is use differently by different services, the Description of the field MUST contain an explicit description of each use.
+4. If a field is created to host a value for technical reasons, but is not or should not be displayed to the users, the API name MUST be prefixed with TECH and an underscore.
+5. If more than 50 fields are created on an object, a consultant SHOULD consider using prefixes to group fields in the same manner as technical fields, in the format of $GROUPNAME followed by an underscore.
 
 ##### Demonstrative Example
 
@@ -98,11 +102,11 @@ The following are examples of custom field naming that should not be used
 
 The following are examples of the naming convention that will be used 
 
-| Custom Field Name | Reason 
-|-------------------|:--------|
-```CountryCode``` | A succinct description of the object using whole words. Description is not required since the name is a commonly understood term. 
-```ZipCode``` | Removing all underscores will help keep a standard naming convention as many times there are words that some may separate into two words and other may not. Description is not required since the name is a commonly understood term. 
-```CompletionDate``` | Date that the order process was completed. Should only be set once payment is received and order was fulfilled. Even though the name seems to make sense, there are business rules that need to be explained, and as such, a longer description was needed.
+| Object | Field Type | Comment | Field Label | Field API Name | Field Description 
+|-------------------|:--------|:--------|:--------|:--------|:--------|
+```Case``` | Lookup | Looks up to Account | Service Provider | ServiceProviderRef__c | 	Links the case to the Service Provider who will conduct the task at the client's.
+```Account``` | Formula | Made for the Accounting department only | Solvability | Accounting_SolvabilityAuto__c | Calculates solvability based on revenue and expenses. Sensitive data, should not be shared.
+```Contact``` | Checkbox | | Sponsored? | IsSponsored__c | 	Checked if the contact was sponsored into the program by another client.
 
 - [Return to Top](#table-of-contents)
 ____

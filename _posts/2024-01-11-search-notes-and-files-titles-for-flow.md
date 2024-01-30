@@ -1,7 +1,7 @@
 ---
 layout: post
 author: William Galinat
-tags: [Salesforce, Invocable Action]
+tags: [Salesforce, Invocable Action, Flow]
 ---
 
 # 🚀 Navigating the Coding Cosmos: The Journey of GetContentDocumentAction Class! 🚀
